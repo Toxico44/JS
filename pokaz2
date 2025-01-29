@@ -1,0 +1,40 @@
+const slides = document.querySelectorAll('.slide');
+
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+let licznik = 0;
+console.log("sa");
+
+let max = slides.length - 1;
+
+window.onload = () => {
+    slides.forEach(element => {
+        element.style.display = 'none';  
+    });
+    slides[licznik].style.display = 'block';
+}
+
+prev.addEventListener('click', () => {
+    if (licznik > 0) {
+        licznik--;
+    }
+    slides.forEach(element => {
+        element.style.display = 'none';
+    });
+    slides[licznik].style.backgroundColor = 'lime';
+    slides[licznik].style.display = 'block';
+});
+
+next.addEventListener('click', () => {
+    if (licznik < max) {
+        licznik++;
+
+    }
+    console.log(licznik);
+    slides.forEach(element => {
+        element.style.display = 'none';
+    });
+    slides[licznik].style.backgroundColor = 'red';
+    slides[licznik].style.display = 'block';
+});
